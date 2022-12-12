@@ -1,7 +1,7 @@
 public class Conta {
     private double saldo;
-    int agencia;
-    int numero;
+    private int agencia;
+    private int numero;
     Cliente titular;
 
     public void deposita(double valor) {
