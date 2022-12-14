@@ -12,10 +12,6 @@ public class Conta {
         System.out.println("Conta criada na agência: " + agencia + " e número " + numero);
     }
 
-    public void deposita(double valor) {
-        saldo += valor;
-    }
-
     public boolean saca(double valor) {
         if(saldo >= valor) {
             saldo -= valor;
@@ -31,6 +27,10 @@ public class Conta {
             return true;
         }
         return false;
+    }
+
+    public void deposita(double valor) {
+        saldo += valor;
     }
 
     public double getSaldo() {
