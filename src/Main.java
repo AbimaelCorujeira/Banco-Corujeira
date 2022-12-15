@@ -8,7 +8,6 @@ public class Main {
 
         contaCorrente.transfere(50, contaPoupanca);
 
-
         System.out.println("Saldo da conta corrente: R$" + contaCorrente.getSaldo());
         System.out.println("Saldo da conta poupança: R$" + contaPoupanca.getSaldo());
     }
