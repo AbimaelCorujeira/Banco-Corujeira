@@ -1,18 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        Conta conta = new Conta(10, 1234);
-        Conta conta2 = new Conta(10, 1235);
-        Conta conta3 = new Conta(11, 1456);
+        ContaCorrente contaCorrente = new ContaCorrente(10, 123);
+        contaCorrente.deposita(100);
 
-        conta.deposita(500);
-        conta2.deposita(1000);
-        conta.saca(200);
-        conta2.transfere(500, conta);
+        ContaPoupanca contaPoupanca = new ContaPoupanca(10, 147);
+        contaPoupanca.deposita(200);
 
-        System.out.println(conta.getSaldo());
-        System.out.println(conta2.getSaldo());
+        contaCorrente.transfere(50, contaPoupanca);
 
-        System.out.println("O total de contas é: " + Conta.getTotal());
 
+        System.out.println("Saldo da conta corrente: R$" + contaCorrente.getSaldo());
+        System.out.println("Saldo da conta poupança: R$" + contaPoupanca.getSaldo());
     }
 }

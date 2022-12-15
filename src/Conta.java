@@ -1,75 +1,77 @@
 public class Conta {
+
     private double saldo;
     private int agencia;
     private int numero;
     private Cliente titular;
-    private static int total;
+    private static int total = 0;
 
-    public Conta(int agencia, int numero) {
+    public Conta(int agencia, int numero){
         total++;
         this.agencia = agencia;
         this.numero = numero;
-        System.out.println("Conta criada na agência: " + agencia + " e número " + numero);
-    }
-
-    public boolean saca(double valor) {
-        if(saldo >= valor) {
-            saldo -= valor;
-            return true;
-        }
-        return false;
-    }
-
-    public boolean transfere(double valor, Conta destino) {
-        if(saldo >= valor) {
-            saldo -= valor;
-            destino.deposita(valor);
-            return true;
-        }
-        return false;
     }
 
     public void deposita(double valor) {
-        saldo += valor;
+        this.saldo = this.saldo + valor;
     }
 
-    public double getSaldo() {
-        return saldo;
+    public boolean saca(double valor) {
+        if(this.saldo >= valor) {
+            this.saldo -= valor;
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public int getAgencia() {
-        return agencia;
+    public boolean transfere(double valor, Conta destino) {
+        if(this.saca(valor)) {
+            destino.deposita(valor);
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public int getNumero() {
-        return numero;
+    public double getSaldo(){
+        return this.saldo;
     }
 
-    public Cliente getTitular() {
-        return titular;
+    public int getNumero(){
+        return this.numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(int numero){
         if(numero <= 0) {
-            System.out.println("Valor menor ou igual a zero não permitido!");
+            System.out.println("Não pode valor menor ou igual a 0");
             return;
         }
         this.numero = numero;
     }
 
-    public void setAgencia(int agencia) {
-        if (agencia <= 0) {
-            System.out.println("Valor menor ou igual a zero não permitido!");
+    public int getAgencia(){
+        return this.agencia;
+    }
+
+    public void setAgencia(int agencia){
+        if(agencia <= 0) {
+            System.out.println("Não pode valor menor ou igual a 0");
             return;
         }
         this.agencia = agencia;
     }
 
-    public void setTitular(Cliente titular) {
+    public void setTitular(Cliente titular){
         this.titular = titular;
     }
 
-    public static int getTotal() {
+    public Cliente getTitular(){
+        return this.titular;
+    }
+
+    public static int getTotal(){
         return Conta.total;
     }
+
 }
