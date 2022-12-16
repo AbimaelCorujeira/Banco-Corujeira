@@ -10,5 +10,12 @@ public class Main {
 
         System.out.println("Saldo da conta corrente: R$" + contaCorrente.getSaldo());
         System.out.println("Saldo da conta poupança: R$" + contaPoupanca.getSaldo());
+
+        SeguroDeVida seguroDeVida = new SeguroDeVida();
+        CalculadorDeImposto calculadorDeImposto = new CalculadorDeImposto();
+        calculadorDeImposto.regista(contaCorrente);
+        calculadorDeImposto.regista(seguroDeVida);
+
+        System.out.println(calculadorDeImposto.getTotalImposto());
     }
 }
