@@ -6,7 +6,7 @@ public class Main {
         ContaPoupanca contaPoupanca = new ContaPoupanca(10, 147);
         contaPoupanca.deposita(200);
 
-        contaCorrente.transfere(50, contaPoupanca);
+        //contaCorrente.transfere(50, contaPoupanca);
 
         System.out.println("Saldo da conta corrente: R$" + contaCorrente.getSaldo());
         System.out.println("Saldo da conta poupança: R$" + contaPoupanca.getSaldo());
