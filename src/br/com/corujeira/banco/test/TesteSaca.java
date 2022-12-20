@@ -1,4 +1,4 @@
-package br.com.corujeira.banco.teste;
+package br.com.corujeira.banco.test;
 
 import br.com.corujeira.banco.model.Conta;
 import br.com.corujeira.banco.model.ContaCorrente;
