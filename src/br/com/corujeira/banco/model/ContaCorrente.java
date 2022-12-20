@@ -1,8 +1,10 @@
-public class ContaCorrente extends Conta implements Tributavel{
+package br.com.corujeira.banco.model;
+
+public class ContaCorrente extends Conta implements Tributavel {
 
     public ContaCorrente(int agencia, int numero) {
         super(agencia, numero);
-        System.out.println("Conta Corrente criada na agência: " + agencia + " e número " + numero);
+        System.out.println("br.com.corujeira.banco.model.Conta Corrente criada na agência: " + agencia + " e número " + numero);
     }
 
     @Override

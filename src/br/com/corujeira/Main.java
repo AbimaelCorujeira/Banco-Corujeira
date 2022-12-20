@@ -1,3 +1,7 @@
+package br.com.corujeira;
+
+import br.com.corujeira.banco.model.*;
+
 public class Main {
     public static void main(String[] args) {
         ContaCorrente contaCorrente = new ContaCorrente(10, 123);

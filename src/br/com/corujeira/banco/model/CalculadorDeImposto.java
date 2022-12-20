@@ -1,3 +1,5 @@
+package br.com.corujeira.banco.model;
+
 public class CalculadorDeImposto {
 
     private double totalImposto;
