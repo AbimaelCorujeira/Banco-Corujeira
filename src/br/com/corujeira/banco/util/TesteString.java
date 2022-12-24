@@ -1,4 +1,4 @@
-package br.com.corujeira.banco.test;
+package br.com.corujeira.banco.util;
 
 public class TesteString {
     public static void main(String[] args) {

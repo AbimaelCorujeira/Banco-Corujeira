@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class test1 {
+public class TesteOrdenacao {
     public static void main(String[] args) {
 
         Conta cc1 = new ContaCorrente(22, 33);
