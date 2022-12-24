@@ -1,6 +1,6 @@
 package br.com.corujeira.banco.model;
 
-public abstract class Conta {
+public abstract class Conta extends Object implements Comparable<Conta>{
 
     protected double saldo;
     private int agencia;
@@ -27,6 +27,21 @@ public abstract class Conta {
     public void transfere(double valor, Conta destino) throws SaldoInsuficienteException{
         this.saca(valor);
         destino.deposita(valor);
+    }
+
+    @Override
+    public int compareTo(Conta outra) {
+        return Double.compare(this.saldo, outra.saldo);
+    }
+
+    @Override
+    public boolean equals(Object referencia) {
+        Conta conta = (Conta) referencia;
+
+        if(this.agencia != conta.agencia || this.numero != conta.numero) {
+            return false;
+        }
+        return true;
     }
 
     public double getSaldo(){
@@ -69,9 +84,11 @@ public abstract class Conta {
         return Conta.total;
     }
 
+
     @Override
     public String toString() {
-        return "Numero: " + this.numero + ", Agencia: " + this.agencia;
+        return "Numero: " + this.numero + ", Agencia: " + this.agencia +
+                ", Saldo: " + this.saldo;
     }
 
 }
